@@ -1,66 +1,56 @@
-# Phase 2 Project
+<img src=https://static.seattletimes.com/wp-content/uploads/2019/02/02062019_housing_160430-780x471.jpg width="1100" height="400">
 
-Another module down--you're almost half way there!
+# A Regression Model that Appraise Homes Remotely for ACME Bank
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
+**Authors**: Nate Walter, Douglas Lu, Shane Mangold. Arthur Kim
 
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+## Table of Contents
+* [Overview](#Overview)
+* [Business Problem](#Business-Problem)
+* [The Data](#The-Data)
+* [Methods](#methods)
 
-## Project Overview
+## Overview
+This project predicts house prices for King County, Washington based on an existing dataset of house sales from 2014 to 2015 
+using linear regression modeling. Our findings will help ACME bank develop and/or validate home appraisals wihtout the need for a 
+bank employee to enter the domicile. ACME can then use the predictions to set sales prices for homes to be put on the market at 
+competitive market values based on the regression model's predictions.
 
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
+<img src=https://user-images.githubusercontent.com/66656063/125619329-48319b12-7456-46a7-b4a4-e27a6babbc6f.png width="500" height="300">
 
-### The Data
+## Business Problem
+A recent wave of COVID-related foreclosures led ACME Bank choose an alternative method to having an appraiser 
+physically entering homes for inspection, so as to limit liability of employees being exposed to COVID-19. 
+Instead, they have come to Group One Inc. for an accurate regression model predicting sales prices for each of their properties. 
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
+## The Data
+The Dataset used is from King County, Washington between May 2014 and May 2015. It includes housing sales prices 
+along with other descriptive information invovling the properties. 
 
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
+* https://www.kaggle.com/harlfoxem/housesalesprediction
 
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
 
-### Business Problem
+## Methods
+This project uses  multiple linear regression in combination with feature engineering, recurssive feature elimination, 
+and dummy regression to predict an unknown house's sales price, all while adhering to the assumptions of linear regression. 
+Test are performed to discover any linear relationship between the dependent and independent variables. Multicollinearity is 
+examined between the inependent variables. The normal distribution of errors and homeoscedasticity are also omni-present goals to be met.  
+Our model uses train-test split which allows us to evaluate whether it has the right balance of bias and variance. 
+We use data visualization via Matplotlib and Seaborn taking advantage of histograms, heatmaaps and scatter plots to 
+help in the exploritory data analysis process as well as evaluation and presentation. The three questions explored are:
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+**1)** What features must be dropped to make an accurate predictive model?
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+**2)** How accurate is our model to the true price of a King County home?
 
-## Deliverables
+**3)** Can our predictions substitute for in person appraisal?
 
-There are three deliverables for this project:
+## Reults
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+## Conclusions
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+## Next Steps
 
-### Key Points
-
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
-
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
-
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
-
-## Getting Started
-
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
-
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
-
-## Project Submission and Review
-
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+## Repository Structure
+```
+```

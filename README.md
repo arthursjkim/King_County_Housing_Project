@@ -113,7 +113,13 @@ Slide Deck.pdf
 Main.ipynb
 (Narrative documentation of Jupyter Notebook)
 
+This notebook uses a non-standard DSI library, named geopandas, as well as one named shapely
+conda install -c conda-forge geopandas
+conda install shapely
+import geopandas as gpd
+from shapely.geometry import Point, Polygon
 
+maps, average price per square footage 
 
 ```
 ```

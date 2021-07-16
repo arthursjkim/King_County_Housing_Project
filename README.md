@@ -96,19 +96,19 @@ The scope of this dataset all pertains to homes in King County, thus the trainin
 
 Our first model, Model 1, depicted strong results. Model 1 was created with a multiple linear regression on every variable that came from the dataset, in which all features of a home were compared against the price of the home. Price in Model 1 was also log transformed into standard price values. This resulted in a R-Squared value of 0.889, differential of 0.00697, and RMSE of 122,558.91:
 
-![OLSMODEL1](./images/ols1.png)
+<img src=./images/ols1.png width="500" height="300">
 
 Our second model, Model 2, is a model that looked at feature specific p-values to be filtered out, specifically those with alpha values above the 0.05 threshold. While Model 2 eliminated several features, the test score R-Squared (0.869), differential value (0.00991) and RMSE value (140,511.22) was not as strong as Model 1. The fit on the data has dropped by removing features containing p-values greater than 0.05. In light of this decrease in accuracy we will continue to rely on our "best" Model 1:
 
-![OLSMODEL2](./images/ols2.png)
+<img src=./images/ols2.png width="500" height="300">
 
 Our third model, Model 3, leverages recursive feature elimination to eliminate uncessary variables in the model in hopes of achieving a better predicting model. The model's respective R-Squared value, differential, and RMSE is: 0.882, 0.00688, 122,840.97. Looking at the score results it becomes apparent that the trade off for removing features from our original model is a reduced R-squared statistic. However, Model 3's R-Squared and RMSE value were also not as strong as that of Model 1. Thus, Model 1 still has a higher R-Squared score and a lower RMSE than that of Model 3, therefore, Model 1 is still the best model. 
 
-![OLSMODEL3](./images/ols3.png)
+<img src=./images/ols3.png width="500" height="300">
 
 Our last model, Model 4, utilized polynomial feature engineering to create new features that would hopefully depict better precision on the regression and produced an R-Square value of 0.866, a differential of 0.23054, and a RMSE of 77,213,973,151 Unfortunately, the polynomial model was extremly sensitive to outlier values versus that of more simpler models: 
 
-![OLSMODEL4](./images/ols4.png)
+<img src=./images/ols4.png width="500" height="300">
 
 
 ## Conclusions
@@ -145,7 +145,6 @@ The model is currently tuned for a dataset that encapsulates both small-medium h
 ├── king_county_appraisal_analysis_presentation.pdf      <-- powerpoint presentation of project
 ├── king_county_appraisal_model_vF.ipynb      <-- main notebook where we determine the best model
 └── king_county_heatmap.ipynb      <-- notebook that creates heatmap of houses in king county by sale price
-
 ```
 
 This notebook uses a non-standard DSI library, named geopandas, as well as one named shapely

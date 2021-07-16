@@ -104,7 +104,7 @@ Our second model, Model 2, is a model that looked at feature specific p-values t
 
 Our third model, Model 3, leverages recursive feature elimination to eliminate uncessary variables in the model in hopes of achieving a better predicting model. The model's respective R-Squared value, differential, and RMSE is: 0.882, 0.00688, 122,840.97. Looking at the score results it becomes apparent that the trade off for removing features from our original model is a reduced R-squared statistic. However, Model 3's R-Squared and RMSE value were also not as strong as that of Model 1. Thus, Model 1 still has a higher R-Squared score and a lower RMSE than that of Model 3, therefore, Model 1 is still the best model. 
 
-![OLSMODEL3v2](./images/ols3.png)
+![OLSMODEL3](./images/ols3.png)
 
 Our last model, Model 4, utilized polynomial feature engineering to create new features that would hopefully depict better precision on the regression and produced an R-Square value of 0.866, a differential of 0.23054, and a RMSE of 77,213,973,151 Unfortunately, the polynomial model was extremly sensitive to outlier values versus that of more simpler models: 
 
@@ -116,7 +116,7 @@ Our last model, Model 4, utilized polynomial feature engineering to create new f
 The final conclusion of the business recommendation hinges on our best-performing Model 1: a multiple linear regression model. More specifically, this multi-linear regression model leverages the power of log to transform all positive variables. Simultaneously, this model also dummies out categorical variables to derive its statistical results. The multiple linear regression model proves to be the most robut model in dealing with outlier values while also proving to be the most accurate model when benchmarked against its R-Squared values as well as its RMSE values. 
 
 ### Actual Vs Predicted Values from Model 1
-![actual vs predictedv2](./images/model1_actual_vs_predicted.png)
+![actual vs predicted](./images/model1_actual_vs_predicted.png)
 
 Hence, given a set of housing datapoints, our multiple linear regression model can aid in predicting the housing prices from a given dataset. While one may assume that complex models may provide a more accurate prediction, our results reveal that a more simple model actually provides more accurate solutions, thus satisfying the principle of Occam's razor. Furthermore, the simple multiple linear regression model also reveals that amongst all features, location features and square footage of living space seems to have the biggest impact on housing prices. Thus, for the sake of predicting home values, it is essential to capture accurate data pertaining to these two features of any home.  
 

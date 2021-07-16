@@ -115,7 +115,8 @@ Our last model, Model 4, utilized polynomial feature engineering to create new f
 
 The final conclusion of the business recommendation hinges on our best-performing Model 1: a multiple linear regression model. More specifically, this multi-linear regression model leverages the power of log to transform all positive variables. Simultaneously, this model also dummies out categorical variables to derive its statistical results. The multiple linear regression model proves to be the most robut model in dealing with outlier values while also proving to be the most accurate model when benchmarked against its R-Squared values as well as its RMSE values. 
 
-![actual vs predicted](./images/mode1_actual_vs_predicted.png)
+### Actual Vs Predicted Values from Model 1
+![actual vs predicted](./images/model1_actual_vs_predicted.png)
 
 Hence, given a set of housing datapoints, our multiple linear regression model can aid in predicting the housing prices from a given dataset. While one may assume that complex models may provide a more accurate prediction, our results reveal that a more simple model actually provides more accurate solutions, thus satisfying the principle of Occam's razor. Furthermore, the simple multiple linear regression model also reveals that amongst all features, location features and square footage of living space seems to have the biggest impact on housing prices. Thus, for the sake of predicting home values, it is essential to capture accurate data pertaining to these two features of any home.  
 

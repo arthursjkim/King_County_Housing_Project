@@ -1,6 +1,6 @@
 <img src=https://static.seattletimes.com/wp-content/uploads/2019/02/02062019_housing_160430-780x471.jpg width="1100" height="400">
 
-# A Regression Model that Appraise Homes Remotely for ACME Bank
+# A Regression Model That Appraises Homes Remotely for ACME Bank
 
 **Authors**: Nate Walter, Douglas Lu, Shane Mangold. Arthur Kim
 
@@ -8,18 +8,21 @@
 * [Overview](#Overview)
 * [Business Problem](#Business-Problem)
 * [The Data](#The-Data)
-* [Methods](#methods)
+* [Methods](#Methods)
+* [Results](#Results)
+* [Conclusions](#Conclusion)
+* [Next Steps](#Next-Steps)
+* [Repository Structure](#Repository-Structure)
 
 ## Overview
 This project utilizes the King County House Sales dataset, which is an existing dataset based on data from house sales of King County, WA from 2014 to 2015. Through the Data Science Process, we seek to understand our dataset through Exploratory Data Analysis and prepare and model our data through an iterative approach. We begin from the baseline model and utilize an assortment of statistical techniques: linear regression, multlinear regression, ordinary least squares, recursive feature elimination, and binomial feature engineering.
 
 Through the various statistical methods, we then seek to iterate across different models to idenitfy the model with the most optimal statistical R-Squared Value, RMSE, and differential values. Then, we look to highlight the two main features that best provide predictions to housing prices. 
 
-With price prediction in mind, our purpose for our statistical analysis is to provide banks to appraise home values throughout the Covid-19 pandemic. Without the need to physically enter the domicile of clients' homes, banks would be able to provide appraisal services to prospective clients and existing clients in hopes of capturing more market share in the residential real estate market. 
+With price prediction in mind, our purpose for our statistical analysis is to provide banks to appraise home values throughout the COVID-19 pandemic. Without the need to physically enter the domicile of clients' homes, banks would be able to provide appraisal services to prospective clients and existing clients in hopes of capturing more market share in the residential real estate market. 
 
 
-Our findings will help ACME bank develop and/or validate home appraisals wihtout the need for a 
-bank employee to enter the domicile. ACME can then use the predictions to set sales prices for homes to be put on the market at 
+Our findings will help ACME bank develop and validate home appraisals without the need for outside individuals to enter the a client or prospect's home. ACME can then use the predictions to set sales prices for homes to be put on the market at 
 competitive market values based on the regression model's predictions.
 
 <img src=https://user-images.githubusercontent.com/66656063/125619329-48319b12-7456-46a7-b4a4-e27a6babbc6f.png width="500" height="300">
@@ -28,9 +31,7 @@ competitive market values based on the regression model's predictions.
 
 With the recent wave of Delta variants in the Covid-19 string, key executives at ACME Bank have came to Group One Inc. to seek solutions on providing its clients and prospects with alternative ways to obtain home appraisal values. ACME Bank is seeking to gain more marketshare from their competitors by providing appraisal services throughout the pandemic, with the hopes of helping its clients and prospects feel safe and comfortable while offering them a solution to appraise their homes. 
 
-Executives at ACME Bank have come to Group One Inc. in hopes of identifying a model that would help best predict home prices given a home's typical features. For example, given a dataset containing 20,000 different homes and its home features (i.e. number of bedrooms, number of bathrooms, square foot of living space, year built, zip code, etc), ACME Bank would like to know whether it can appropriately appraise a home's value with these different data. 
-
-Henceforth, executives at ACME Bank have provided us with a dataset for house sales in King County from 2014 - 2015 in hopes obtaining a solution that could model a home's price. At Group One Inc., we have formulated a statistical model to this business problem.  
+Executives at ACME Bank have come to Group One Inc. in hopes of identifying a model that would help best predict home prices given a home's typical features. For example, given a dataset containing 20,000 different homes and its home features (i.e. number of bedrooms, number of bathrooms, square foot of living space, year built, zip code, etc), ACME Bank would like to know whether it can appropriately appraise a home's value with these different data. Accordingly, executives at ACME Bank have provided us with a dataset for house sales in King County from 2014 - 2015 in hopes obtaining a solution that could model a home's price. At Group One Inc., we have formulated a statistical model to answer this business problem.  
 
 
 ## Data
@@ -40,11 +41,31 @@ The Dataset used is from King County, Washington between May 2014 and May 2015. 
 
 The Data that was included in our model can be seen below, broken down into target, numeric, and categorical data. 
 
-Target Data: Price
+**Target Data**: 
 
-Numeric Data: Bedrooms, Bathrooms, sq_ft living, sqft_lot, sqft_above, sqft_basement, lat, long, sqft_living15, sqft_lot15
+Price - Prediction Target
 
-Categorical Data: Floors, waterfront, view, condition, grade, if_renovated, zipcode, month_of_date
+**Numeric Data**: 
+bedrooms - Number of Bedrooms
+bathrooms - Number of Bathrooms
+sq_ft living - Square footage of living space
+sqft_lot - Square footage of the lot
+sqft_above - Square footage of the house 
+sqft_basement - Square footage of the basement 
+lat - latitude coordinate
+long - longitude coordinate
+sqft_living15 - The square footage of interior living space of surrounding 15 neighbors 
+sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
+
+**Categorical Data**: 
+floors - total floors in the house
+waterfront - view of waterfront of house
+view - number of times the house has been viewed
+condition - how good the condition of the house is 
+grade - overall grade of housing unit condition,based on King County grading system
+if_renovated - whether house was renovated
+zipcode - location of the house
+month_of_date - month of when the house was sold 
 
 
 ## Methods
@@ -73,16 +94,21 @@ We applied the above methodology across the 4 models that we created and narrowe
 
 The scope of this dataset all pertains to homes in King County, thus the training and testing data on our model would be highly multicollinear beetween the training and testing data's variables. 
 
-Our first model, Model 1, depicted strong results. Model 1 was created with a multiple linear regression on every variable that came from the dataset, in which all features of a home were compared against the price of the home. Price in Model 1 was also log transformed into standard price values:
+Our first model, Model 1, depicted strong results. Model 1 was created with a multiple linear regression on every variable that came from the dataset, in which all features of a home were compared against the price of the home. Price in Model 1 was also log transformed into standard price values. This resulted in a R-Squared value of 0.889, differential of 0.00697, and RMSE of 122,558.91:
 
-INSERT IMAGE OF MODEL 1 
+![SCREENSHOT_OLSMODEL1](![OLS_MODEL_1](https://user-images.githubusercontent.com/83049027/125971120-22c7f7d0-5e11-4754-9ad9-5cc603741a3d.png))
 
-Our second model, Model 2, is a model that looked at feature specific p-values to be filtered out, specifically those with alpha values above the 0.05 threshold. While Model 2 eliminated several features, the R-Squared and RMSE value was not as strong as Model 1: 
+Our second model, Model 2, is a model that looked at feature specific p-values to be filtered out, specifically those with alpha values above the 0.05 threshold. While Model 2 eliminated several features, the test score R-Squared (0.869), differential value (0.00991) and RMSE value (140,511.22) was not as strong as Model 1. The fit on the data has dropped by removing features containing p-values greater than 0.05. In light of this decrease in accuracy we will continue to rely on our "best" Model 1:
 
-Our third model, Model 3, leverages recursive feature elimination to eliminate uncessary variables in the model in hopes of achieving a better predicting model. However, Model 3's R-Squared and RMSE value were also not as strong as that of Model 1: 
+![SCREENSHOT_OLSMODEL2](![OLS_MODEL_2](https://user-images.githubusercontent.com/83049027/125971196-028d93c9-95a6-4f7b-8af7-23f173706409.png))
 
-Our last model, Model 4, utilized polynomial feature engineering to create new features that would hopefully depict better precision on the regression. Unfortunately, the polynomial model was extremly sensitive to outlier values versus that of more simpler models: 
+Our third model, Model 3, leverages recursive feature elimination to eliminate uncessary variables in the model in hopes of achieving a better predicting model. The model's respective R-Squared value, differential, and RMSE is: 0.882, 0.00688, 122,840.97. Looking at the score results it becomes apparent that the trade off for removing features from our original model is a reduced R-squared statistic. However, Model 3's R-Squared and RMSE value were also not as strong as that of Model 1. Thus, Model 1 still has a higher R-Squared score and a lower RMSE than that of Model 3, therefore, Model 1 is still the best model. 
 
+![SCREENSHOT_OLSMODEL3](![OLS_MODEL_3](https://user-images.githubusercontent.com/83049027/125971238-ae4c77a9-7148-437a-867a-0c28bf9f0801.png))
+
+Our last model, Model 4, utilized polynomial feature engineering to create new features that would hopefully depict better precision on the regression and produced an R-Square value of 0.866, a differential of 0.23054, and a RMSE of 77,213,973,151 Unfortunately, the polynomial model was extremly sensitive to outlier values versus that of more simpler models: 
+
+![SCREENSHOT_OLSMODEL4](![OLS_MODEL_4](https://user-images.githubusercontent.com/83049027/125971336-35cfc76e-8d14-48b6-bba9-21c23204a9bc.png))
 
 
 ## Conclusions
@@ -118,8 +144,7 @@ conda install -c conda-forge geopandas
 conda install shapely
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
-
-maps, average price per square footage 
+ 
 
 ```
 ```

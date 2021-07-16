@@ -96,24 +96,26 @@ The scope of this dataset all pertains to homes in King County, thus the trainin
 
 Our first model, Model 1, depicted strong results. Model 1 was created with a multiple linear regression on every variable that came from the dataset, in which all features of a home were compared against the price of the home. Price in Model 1 was also log transformed into standard price values. This resulted in a R-Squared value of 0.889, differential of 0.00697, and RMSE of 122,558.91:
 
-![SCREENSHOT_OLSMODEL1](![OLS_MODEL_1](https://user-images.githubusercontent.com/83049027/125971120-22c7f7d0-5e11-4754-9ad9-5cc603741a3d.png))
+![OLSMODEL1](./images/ols1.png)
 
 Our second model, Model 2, is a model that looked at feature specific p-values to be filtered out, specifically those with alpha values above the 0.05 threshold. While Model 2 eliminated several features, the test score R-Squared (0.869), differential value (0.00991) and RMSE value (140,511.22) was not as strong as Model 1. The fit on the data has dropped by removing features containing p-values greater than 0.05. In light of this decrease in accuracy we will continue to rely on our "best" Model 1:
 
-![SCREENSHOT_OLSMODEL2](![OLS_MODEL_2](https://user-images.githubusercontent.com/83049027/125971196-028d93c9-95a6-4f7b-8af7-23f173706409.png))
+![OLSMODEL2](./images/ols2.png)
 
 Our third model, Model 3, leverages recursive feature elimination to eliminate uncessary variables in the model in hopes of achieving a better predicting model. The model's respective R-Squared value, differential, and RMSE is: 0.882, 0.00688, 122,840.97. Looking at the score results it becomes apparent that the trade off for removing features from our original model is a reduced R-squared statistic. However, Model 3's R-Squared and RMSE value were also not as strong as that of Model 1. Thus, Model 1 still has a higher R-Squared score and a lower RMSE than that of Model 3, therefore, Model 1 is still the best model. 
 
-![SCREENSHOT_OLSMODEL3](![OLS_MODEL_3](https://user-images.githubusercontent.com/83049027/125971238-ae4c77a9-7148-437a-867a-0c28bf9f0801.png))
+![OLSMODEL3](./images/ols3.png)
 
 Our last model, Model 4, utilized polynomial feature engineering to create new features that would hopefully depict better precision on the regression and produced an R-Square value of 0.866, a differential of 0.23054, and a RMSE of 77,213,973,151 Unfortunately, the polynomial model was extremly sensitive to outlier values versus that of more simpler models: 
 
-![SCREENSHOT_OLSMODEL4](![OLS_MODEL_4](https://user-images.githubusercontent.com/83049027/125971336-35cfc76e-8d14-48b6-bba9-21c23204a9bc.png))
+![OLSMODEL4](./images/ols4.png)
 
 
 ## Conclusions
 
 The final conclusion of the business recommendation hinges on our best-performing Model 1: a multiple linear regression model. More specifically, this multi-linear regression model leverages the power of log to transform all positive variables. Simultaneously, this model also dummies out categorical variables to derive its statistical results. The multiple linear regression model proves to be the most robut model in dealing with outlier values while also proving to be the most accurate model when benchmarked against its R-Squared values as well as its RMSE values. 
+
+![actual vs predicted](./images/actual_vs_predicted.png)
 
 Hence, given a set of housing datapoints, our multiple linear regression model can aid in predicting the housing prices from a given dataset. While one may assume that complex models may provide a more accurate prediction, our results reveal that a more simple model actually provides more accurate solutions, thus satisfying the principle of Occam's razor. Furthermore, the simple multiple linear regression model also reveals that amongst all features, location features and square footage of living space seems to have the biggest impact on housing prices. Thus, for the sake of predicting home values, it is essential to capture accurate data pertaining to these two features of any home.  
 

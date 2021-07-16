@@ -115,7 +115,7 @@ Our last model, Model 4, utilized polynomial feature engineering to create new f
 
 The final conclusion of the business recommendation hinges on our best-performing Model 1: a multiple linear regression model. More specifically, this multi-linear regression model leverages the power of log to transform all positive variables. Simultaneously, this model also dummies out categorical variables to derive its statistical results. The multiple linear regression model proves to be the most robut model in dealing with outlier values while also proving to be the most accurate model when benchmarked against its R-Squared values as well as its RMSE values. 
 
-![actual vs predicted](./images/actual_vs_predicted.png)
+![actual vs predicted](./images/mode1_actual_vs_predicted.png)
 
 Hence, given a set of housing datapoints, our multiple linear regression model can aid in predicting the housing prices from a given dataset. While one may assume that complex models may provide a more accurate prediction, our results reveal that a more simple model actually provides more accurate solutions, thus satisfying the principle of Occam's razor. Furthermore, the simple multiple linear regression model also reveals that amongst all features, location features and square footage of living space seems to have the biggest impact on housing prices. Thus, for the sake of predicting home values, it is essential to capture accurate data pertaining to these two features of any home.  
 
@@ -135,20 +135,15 @@ The model is currently tuned for a dataset that encapsulates both small-medium h
 ## Repository Structure
 
 ```
-├── bakeoff_data
-│   ├── Xtest.csv
-│   ├── Xtrain.csv
-│   └── ytrain.csv
-├── data
-│   ├── column_names.md
-│   ├── kc_house_data.csv
-│   └── view
-├── DS_060721_Group_1_bakeoff_results.csv
+├── bakeoff_data       <-- contains the data for the bakeoff challenge
+├── data      <-- contains the data for the main model notebook
+├── images      <-- contains the images for the readme
+├── DS_060721_Group_1_bakeoff_results.csv      <-- the resulting predictions from the model based on bakeoff data
 ├── README.md
-├── bakeoff.ipynb
-├── king_county_appraisal_analysis_presentation.pdf
-├── king_county_appraisal_model_vF.ipynb
-└── king_county_heatmap.ipynb
+├── bakeoff.ipynb      <-- notebook that ran the model with bakeoff data
+├── king_county_appraisal_analysis_presentation.pdf      <-- powerpoint presentation of project
+├── king_county_appraisal_model_vF.ipynb      <-- main notebook where we determine the best model
+└── king_county_heatmap.ipynb      <-- notebook that creates heatmap of houses in king county by sale price
 
 ```
 

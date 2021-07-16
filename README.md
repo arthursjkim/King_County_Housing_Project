@@ -132,19 +132,26 @@ The model is currently tuned for a dataset that encapsulates both small-medium h
 
 ## Repository Structure
 
-README.md 
-(the top level README for reviewers of this project)
-Slide Deck.pdf 
-(pdf file of the powerpoint presentation side to be presented)
-Main.ipynb
-(Narrative documentation of Jupyter Notebook)
+```
+├── bakeoff_data
+│   ├── Xtest.csv
+│   ├── Xtrain.csv
+│   └── ytrain.csv
+├── data
+│   ├── column_names.md
+│   ├── kc_house_data.csv
+│   └── view
+├── DS_060721_Group_1_bakeoff_results.csv
+├── README.md
+├── bakeoff.ipynb
+├── king_county_appraisal_analysis_presentation.pdf
+├── king_county_appraisal_model_vF.ipynb
+└── king_county_heatmap.ipynb
+
+```
 
 This notebook uses a non-standard DSI library, named geopandas, as well as one named shapely
 conda install -c conda-forge geopandas
 conda install shapely
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
- 
-
-```
-```
